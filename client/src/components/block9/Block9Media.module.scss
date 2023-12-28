@@ -1,0 +1,43 @@
+@media screen and (max-width: 1320px) {
+  .block9 {
+    flex-direction: column-reverse;
+
+    .blockImg, .blockText {
+      text-align: center;
+      min-width: 100%;
+    }
+
+    .blockText {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .block9 {
+    .blockText {
+      font-size: 38px;
+
+      .textSmall {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .block9 {
+    .blockImg {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 420px) {
+  .block9 {
+    .blockText {
+      font-size: 32px;
+    }
+  }
+}
