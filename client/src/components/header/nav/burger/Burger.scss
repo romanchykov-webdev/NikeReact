@@ -1,0 +1,45 @@
+@import '../../../../../util/colors.scss';
+button.burger {
+  width: 48px;
+  height: 24px;
+  position: relative;
+  // outline: 1px solid red;
+  span {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: $colorWhite;
+    transition: 0.5s;
+    &:nth-child(1) {
+      top: 4px;
+      left: 0;
+    }
+    &:nth-child(2) {
+      top: 11px;
+      left: 0;
+    }
+    &:nth-child(3) {
+      top: 18px;
+      left: 0;
+    }
+  }
+}
+
+button.burger.active{
+  span{
+    &:nth-child(1) {
+      top: 11px;
+      left: 0;
+      transform: rotate(27deg);
+    }
+    &:nth-child(2) {
+      top: 11px;
+      left: 0;
+      transform: rotate(-27deg);
+    }
+    &:nth-child(3) {
+      top: 11px;
+      opacity: 0;
+    }
+  }
+}

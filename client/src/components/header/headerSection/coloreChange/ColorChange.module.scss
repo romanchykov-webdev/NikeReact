@@ -1,0 +1,15 @@
+.colorChange{
+  position: absolute;
+  z-index: 3;
+  top: -80px;
+  left: -80px;
+  svg{
+    circle {
+      cursor: pointer;
+    }
+    circle.active {
+      stroke-width: 3;
+      r: 11;
+    }
+  }
+}

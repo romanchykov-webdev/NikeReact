@@ -1,0 +1,55 @@
+.wrapperDesc{
+  display: flex;
+  flex-direction: column;
+  .name{
+    font-size: 48px;
+    font-family: Futura Md BT ,sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 7.68px;
+    margin-bottom: 21px;
+  }
+  .priceSizeBag{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    .price{
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 36px;
+    }
+    .sizeBag{
+      display: flex;
+      align-items: center;
+      .size{
+        font-size: 36px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        span{
+          font-size: 16px;
+          font-weight: 400;
+          margin-right: 19px;
+        }
+        .changeSize{
+          background-color: rgba(0,0,0,0);
+          color: #fff;
+          border: none;
+          margin-right: 32px;
+          option{
+            background-color: #000;
+            border: none;
+          }
+        }
+      }
+      .bagItem{
+        cursor: pointer;
+      }
+    }
+  }
+  button{
+    align-self: flex-start;
+  }
+}
