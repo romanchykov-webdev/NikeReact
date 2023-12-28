@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Block7.modulo.scss'
+import s from './Block7.module.scss'
 
 import img1 from './img/1.png'
 import img2 from './img/2.png'
@@ -15,7 +15,7 @@ import img8 from './img/8.png'
 
 const Block7 = () => {
     return (
-        <div className="block7">
+        <div className={s.block7}>
             <img src={img1} alt="img"/>
             <img src={img2} alt="img"/>
             <img src={img3} alt="img"/>

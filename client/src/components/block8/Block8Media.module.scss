@@ -1,0 +1,36 @@
+@media screen and (max-width: 1320px) {
+  .block8 {
+    flex-direction: column;
+    .blockText {
+      width: 100%;
+      margin-bottom: 40px;
+      .textHeader, .textSmall {
+        text-align: center;
+      }
+    }
+    .blockImg{
+      img:nth-child(3) {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .block8 {
+    .blockImg {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        min-width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+}
+@media screen and (max-width: 380px) {
+
+}
