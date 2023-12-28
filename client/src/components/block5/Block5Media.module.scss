@@ -1,0 +1,26 @@
+
+@media screen and (max-width: 992px) {
+  .block5 {
+    flex-flow: column-reverse;
+    .blockDesk {
+      margin-bottom: 40px;
+      .textHeader, .textSmall {
+        text-align: center;
+      }
+      //button.btn.btnMiddle {
+      //  margin: 0 auto;
+      //}
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .block5 {
+    .blockImg {
+      margin: 0;
+      justify-content: center; 
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
