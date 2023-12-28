@@ -1,0 +1,17 @@
+
+.block7 {
+  margin-bottom: 400px;
+  display: flex;
+  //justify-content: space-between;
+  justify-content: space-around;
+  object-fit: contain;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  img {
+    height: 70px
+  }
+}
+
+
+
+@import './Block7Media.modulo';
