@@ -1,15 +1,12 @@
 import React from 'react';
 import  './Popup.scss'
 import {useDispatch, useSelector} from "react-redux";
-import {changeColorAction} from "../header/headerSection/headerSectionReducerSlice";
 import {
     popupChangeColorActive,
     popupChangeSizeAction,
     popupHiddenAction,
 } from "./popupReducerSlice";
-import imgBlack from "../header/img/itemsImg/1.png";
-import imgRed from "../header/img/itemsImg/2.png";
-import imgOrange from "../header/img/itemsImg/3.png";
+
 import {addToBagAction} from "../../reducers/addToBagReducerSlice";
 import {dispatchStepsWithTimeout} from "../step/stepShowHidden";
 
@@ -42,8 +39,8 @@ const Popup = () => {
     function handlerPopup() {
         const item = {
             id: itemData.id,
-            size: popupData.color,
-            color: popupData.size,
+            size: popupData.size,
+            color: popupData.color,
             price: itemData.price,
             title: itemData.name,
             desc: '',

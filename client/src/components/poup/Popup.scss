@@ -23,7 +23,7 @@
   background-color: #000000a3;
   z-index: 10;
   transition-delay: 1s;
-
+overflow-y: scroll;
 }
 
 
@@ -45,8 +45,8 @@
     .closePopup {
       color: black;
       position: absolute;
-      top: 15px;
-      right: 15px;
+      top: 35px;
+      right: 25px;
       font-size: 30px;
       font-weight: 600;
       cursor: pointer;

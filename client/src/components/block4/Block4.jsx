@@ -85,7 +85,7 @@ const Block4 = () => {
                             <div className={s.itemCart}>
                                 <div className={s.wrapImg}>
                                     <img className={s.imgScarpa} src={i.img} alt="imgItem"
-                                         data-img="img/block4/1.png"/>
+                                         />
                                     <span className={s.desk}>
                                         <img src={desk} alt="imgdsk"/>
                                     </span>

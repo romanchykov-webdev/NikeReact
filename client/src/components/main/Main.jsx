@@ -4,6 +4,7 @@ import Block2 from "../block2/Block2";
 import Block3 from "../block3/Block3";
 import Block4 from "../block4/Block4";
 import Block5 from "../block5/Block5";
+import Block6 from "../block6/Block6";
 
 const Main = () => {
     return (
@@ -47,6 +48,7 @@ const Main = () => {
                 <Block3/>
                 <Block4/>
                 <Block5/>
+                <Block6/>
             </div>
         </main>
     );
