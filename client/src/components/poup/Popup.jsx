@@ -16,6 +16,7 @@ import {dispatchStepsWithTimeout} from "../step/stepShowHidden";
 const Popup = () => {
 
     const dispatch = useDispatch()
+    const popupIsActive=useSelector(state => state.popupSlice.isActive)
 
     const colorAction = useSelector(state => state.popupSlice.color)
     const itemData = useSelector(state => state.popupSlice.item)
@@ -55,14 +56,17 @@ const Popup = () => {
     }
 
     return (
-        <div className={"popup"} style={{backgroundColor: `${colorBg}`}}>
+        <div className={`popup ${popupIsActive ? 'active' : ''}`}
+             style={{backgroundColor: `${colorBg}`}}
+
+        >
 
             <div className={"wrapper"}>
                 <div className={"closePopup"}
                      onClick={() => dispatch(popupHiddenAction())}
                 >X
                 </div>
-                <div className={"imgBx"}>
+                <div className={"imgBx"} style={{backgroundColor:colorBg}} >
 
                     {/*<img src="https://github.com/anuzbvbmaniac/Responsive-Product-Card---CSS-ONLY/blob/master/assets/img/jordan_proto.png?raw=true" alt="Nike Jordan Proto-Lyte Image"/>*/}
                     <img src={itemData.img} alt="Nike Jordan Proto-Lyte Image"/>
