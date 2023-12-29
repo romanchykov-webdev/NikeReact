@@ -3,7 +3,7 @@ import burgerReducerSlice from "../components/header/nav/burger/burgerReducerSli
 import headerSectionReducerSlice from "../components/header/headerSection/headerSectionReducerSlice";
 import popupReducerSlice from "../components/poup/popupReducerSlice";
 import addToBagReducerSlice from "./addToBagReducerSlice";
-import stepReducerSlice from "../components/step/stepReducerSlice";
+// import stepReducerSlice from "../components/step/stepReducerSlice";
 
 
 const rootReducer = combineReducers({
@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
     headerSlice: headerSectionReducerSlice,
     popupSlice: popupReducerSlice,
     addToBagSlice: addToBagReducerSlice,
-    stepSlice: stepReducerSlice,
+    // stepSlice: stepReducerSlice,
 })
 
 export const store = configureStore({

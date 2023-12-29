@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import  './Step.scss'
 import {useSelector} from "react-redux";
 const Step = () => {
-    const isVisible=useSelector(state => state.stepSlice.isVisibleStep)
+    // const isVisible=useSelector(state => state.stepSlice.isVisibleStep)
+    const isVisible=useSelector(state => state.addToBagSlice.isVisibleStep)
 
 
 

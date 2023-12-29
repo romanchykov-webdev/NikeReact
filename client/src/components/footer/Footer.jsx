@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Footer.module.scss'
 import logo from './img/Logo.png'
+import SendEmail from "../../ui/sendEmail/SendEmail";
 
 
 
@@ -15,13 +16,8 @@ const Footer = () => {
                             Let’s stay in touch
                         </div>
                         {/*<!-- /.textHeader -->*/}
-                        <div className={s.blockSendEmail}>
-                            <input type="text" placeholder="Enter email..."/>
-                                <button className={s.sendMail}>
-                                    Subscribe
-                                </button>
-                        </div>
-                        {/*<!-- /.blockSendEmail -->*/}
+                        <SendEmail/>
+
                         <div className={s.blockLogo}>
                             <img src={logo} alt="imglogo"/>
                         </div>
@@ -181,7 +177,10 @@ const Footer = () => {
                         </svg>
                     </div>
                     {/*   <!-- /.data -->*/}
-                    <div className={s.romancykov}>
+                    <div className={s.romanchykov}>
+                        <a href="mailto:romanchykov.serhii@gmail.com">
+                            romanchykov.serhii@gmail.com
+                        </a>
                     </div>
                     
                     <div className={s.social}>

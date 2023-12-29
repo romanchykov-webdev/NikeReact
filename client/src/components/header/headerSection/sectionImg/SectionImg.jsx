@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './SectionImg.module.scss'
 import imgBlack from '../../img/itemsImg/1.png'
 import imgRed from '../../img/itemsImg/2.png'
@@ -10,6 +10,9 @@ import {dispatchStepsWithTimeout} from "../../../step/stepShowHidden";
 
 const SectionImg = () => {
     const dispatch = useDispatch()
+
+
+
 
     const imgColor = useSelector(state => state.headerSlice.color)
     const headerItem = useSelector(state => state.headerSlice)

@@ -18,29 +18,7 @@ footer {
         line-height: 64px; //* 133.333% */
         margin-bottom: 32px;
       }
-      .blockSendEmail {
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 24px; //* 150% */
-        margin-bottom: 85px;
-        position: relative;
-        width: 400px;
-        input {
-          width: 100%;
-          height: 50px;
-          border-radius: 80px;
-          border: 1px solid $colorWhite;
-          color: rgba(255, 255, 255, 0.50);
-          padding-left: 40px;
-          background-color: transparent;
-        }
-        button.sendMail {
-          position: absolute;
-          right: 0;
-          top: 0;
-        }
-      }
+
     }
     .blockRight {
       display: flex;
@@ -75,8 +53,11 @@ footer {
   }
   .wrapCopyright {
     display: flex;
-    justify-content: space-between;
+    //justify-content: space-between;
+    justify-content: space-around;
+    gap: 20px;
     padding: 32px 0;
+    flex-wrap: wrap;
     .data {
       font-family: Futura Bk BT,sans-serif;
       font-size: 16px;
@@ -87,6 +68,12 @@ footer {
       svg {
         margin-left: 8px;
       }
+    }
+    .romanchykov{
+      display: flex;
+      font-size: 1.8em;
+      //margin-top:20px ;
+      //margin-bottom:20px ;
     }
     .social {
       a {

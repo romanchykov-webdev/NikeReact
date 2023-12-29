@@ -52,6 +52,7 @@ const Block6 = () => {
 
                         <div className={s.wrap}
                              onClick={()=>dispatch(popupIsActive({i}))}
+                             key={i.id}
                         >
                             <span className={s.bgitem}></span>
                             <div className={s.itemCart}>

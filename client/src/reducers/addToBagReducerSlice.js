@@ -1,20 +1,10 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-
-// {
-//     id: '',
-//         size: '',
-//     color: '',
-//     price: '',
-//     title: '',
-//     desc: '',
-//     img: '',
-// }
-
 const addToBagReducerSlice = createSlice({
     name: 'addToBag',
     initialState: {
         bag: [],
+        isVisibleStep: false,
     },
     reducers: {
         addToBagAction(state, action) {
@@ -38,6 +28,7 @@ const addToBagReducerSlice = createSlice({
             } else {
                 // If the item doesn't exist, add it to the bag
                 state.bag=[...state.bag, newItem]
+                state.isVisibleStep=true
                 // return {
                 //     ...state,
                 //     bag: [...state.bag, newItem],
@@ -46,12 +37,20 @@ const addToBagReducerSlice = createSlice({
 
             }
 
-        }
+        },
+        showStepAction(state) {
+            state.isVisibleStep = true;
+        },
+        hideStepAction(state) {
+            state.isVisibleStep = false;
+        },
     }
 })
 
 export default addToBagReducerSlice.reducer
 export const {
     addToBagAction,
+    showStepAction,
+    hideStepAction
 
 } = addToBagReducerSlice.actions
