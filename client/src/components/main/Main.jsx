@@ -1,14 +1,15 @@
 import React from 'react';
 import './Main.scss';
-import Block2 from "../block2/Block2";
-import Block3 from "../block3/Block3";
-import Block4 from "../block4/Block4";
-import Block5 from "../block5/Block5";
-import Block6 from "../block6/Block6";
-import Block7 from "../block7/Block7";
-import Block8 from "../block8/Block8";
-import Block9 from "../block9/Block9";
-import Block10 from "../block10/Block10";
+import Block2 from "./block2/Block2";
+import Block3 from "./block3/Block3";
+import Block4 from "./block4/Block4";
+import Block5 from "./block5/Block5";
+import Block6 from "./block6/Block6";
+import Block7 from "./block7/Block7";
+import Block8 from "./block8/Block8";
+import Block9 from "./block9/Block9";
+import Block10 from "./block10/Block10";
+import Block11 from "./block11/Block11";
 
 const Main = () => {
     return (
@@ -57,6 +58,7 @@ const Main = () => {
                 <Block8/>
                 <Block9/>
                 <Block10/>
+                <Block11/>
             </div>
         </main>
     );

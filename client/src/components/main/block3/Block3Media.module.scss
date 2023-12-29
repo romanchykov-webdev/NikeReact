@@ -1,0 +1,19 @@
+
+
+@media screen and (max-width: 992px) {
+  .block3 {
+      .tiles {
+          grid-template-columns: 1fr;
+          column-gap: 0;
+          row-gap: 15px;
+      }
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+}
+
+@media screen and (max-width: 380px) {
+
+}

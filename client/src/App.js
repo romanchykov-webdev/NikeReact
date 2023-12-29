@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import Step from "./components/step/Step";
 import Main from "./components/main/Main";
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
+import Footer from "./components/footer/Footer";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             </TransitionGroup>
 
             <Main/>
+            <Footer/>
             <Step/>
         </div>
     );
