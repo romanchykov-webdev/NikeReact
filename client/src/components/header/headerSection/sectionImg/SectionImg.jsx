@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './SectionImg.module.scss'
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import { addToBagAction} from "../../../../reducers/addToBagReducerSlice";
 import ColorChange from "../coloreChange/ColorChange";
 import {dispatchStepsWithTimeout} from "../../../step/stepShowHidden";

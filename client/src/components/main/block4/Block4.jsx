@@ -14,7 +14,8 @@ import Button from "../../../ui/button/Button";
 const Block4 = () => {
     const itemsBlock4 = [
         {
-            id: 6,
+            id: 8,
+            article: 8,
             name: 'Nike Air Max Plus 3',
             price: 310,
             img: img1,
@@ -22,7 +23,8 @@ const Block4 = () => {
             sizes: [41, 42, 43, 44, 45]
         },
         {
-            id: 7,
+            id: 9,
+            article: 9,
             name: 'Air Jordan 4 Retro Lightning (Premium Batch)',
             price: 340,
             img: img2,
@@ -30,7 +32,8 @@ const Block4 = () => {
             sizes: [41, 42, 43, 44]
         },
         {
-            id: 8,
+            id: 10,
+            article: 10,
             name: 'Air Jordan 13 Retro Court Purple (Reflective)',
             price: 350,
             img: img3,
@@ -38,7 +41,8 @@ const Block4 = () => {
             sizes: [41, 42, 43, 44]
         },
         {
-            id: 9,
+            id: 11,
+            article: 11,
             name: 'Air Jordan 1 AJKO Blue Red',
             price: 340,
             img: img4,
@@ -46,7 +50,8 @@ const Block4 = () => {
             sizes: [41, 42, 43, 44]
         },
         {
-            id: 10,
+            id: 12,
+            article: 12,
             name: 'Yeezy Boost 350 V2 MX Rock (Real Boost)',
             price: 370,
             img: img5,
@@ -54,7 +59,8 @@ const Block4 = () => {
             sizes: [41, 42, 43, 44]
         },
         {
-            id: 11,
+            id: 13,
+            article: 13,
             name: 'Vans Old Skool Suede Honey Gold',
             price: 380,
             img: img6,

@@ -28,8 +28,8 @@ const addToBagReducerSlice = createSlice({
                 // };
             } else {
                 // If the item doesn't exist, add it to the bag
-                state.bag=[...state.bag, newItem]
-                state.isVisibleStep=true
+                state.bag = [...state.bag, newItem]
+                state.isVisibleStep = true
                 // return {
                 //     ...state,
                 //     bag: [...state.bag, newItem],
@@ -39,8 +39,8 @@ const addToBagReducerSlice = createSlice({
             }
 
         },
-        isVisibleBagToggle(state){
-            state.isVisibleBag=!state.isVisibleBag
+        isVisibleBagToggle(state) {
+            state.isVisibleBag = !state.isVisibleBag
         },
         showStepAction(state) {
             state.isVisibleStep = true;
@@ -48,32 +48,48 @@ const addToBagReducerSlice = createSlice({
         hideStepAction(state) {
             state.isVisibleStep = false;
         },
-        incrementBagAction(state,action){
+        incrementBagAction(state, action) {
+            const {id} = action.payload;
             // debugger
-            const id =action.payload
-            const item = state.bag.find(item => item.id === id);
-            if (item) {
-                item.quantity = (item.quantity || 0) + 1;
-            }
-
-
+            // return {
+            //     ...state,
+            //     bag: [...state.bag.map(item => item.id === action.payload.id
+            //         ? {...item, quantity: item.quantity + 1}
+            //         : {...item}
+            //     )]
+            // }
+            state.bag = state.bag.map(item =>
+                item.id === id
+                    ? {...item, quantity: item.quantity + 1}
+                    : item
+            );
         },
-        decrementBagAction(state,action){
+        decrementBagAction(state, action) {
             // debugger
-            const id =action.payload
-            const item = state.bag.find(item => item.id === id);
-            if(item.quantity>1){
-                if (item) {
-                    item.quantity = (item.quantity || 0) - 1;
+            const {id} = action.payload
+            // state.bag = state.bag.map(item =>
+            //     item.id === id
+            //         ? {
+            //             ...item, quantity: item.quantity > 1
+            //                 ? item.quantity - 1
+            //                 : item.quantity = 1
+            //         }
+            //         : item
+            // );
+            state.bag = state.bag.map(item =>{
+                if(item.id===id){
+                    if(item.quantity>1){
+                        return {...item, quantity: item.quantity - 1}
+                    }
                 }
-            }
-
+                return item
+            })
 
         },
-        removeItemInTheBag(state,action){
+        removeItemInTheBag(state, action) {
             const id = action.payload
             debugger
-            state.bag = state.bag.filter(item=>item.id!==id);
+            state.bag = state.bag.filter(item => item.id !== id);
 
         }
     }

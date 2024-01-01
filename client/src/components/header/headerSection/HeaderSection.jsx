@@ -21,6 +21,7 @@ const HeaderSection = () => {
                             </div>
                         )
                     }
+                    return null;
                 })
             }
 
