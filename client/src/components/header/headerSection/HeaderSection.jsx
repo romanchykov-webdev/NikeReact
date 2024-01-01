@@ -15,7 +15,7 @@ const HeaderSection = () => {
                 itemArray.map((item,index)=>{
                     if(item.color===colorActive){
                         return(
-                            <div     key={index+3}>
+                            <div  className={s.wrapperHeaderSection}   key={index+3}>
                                 <SectionImg item={item} sizeActive={sizeActive}  />
                                 <SectionSize size={item.size} price={item.price}/>
                             </div>
