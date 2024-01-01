@@ -2,8 +2,14 @@ import React from 'react';
 import logo from '../img/Logo.png'
 import './Nav.scss'
 import Burger from "./burger/Burger";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {isVisibleBagToggle} from "../../../reducers/addToBagReducerSlice";
+
+
+
 const Nav = () => {
+
+    const dispatch =useDispatch()
 
     const quantity=useSelector(state => state.addToBagSlice.bag.length)
     // console.log(quantity)
@@ -72,8 +78,10 @@ const Nav = () => {
                     </a>
                 </div>
                 {/*.account */}
-                <div className="bag">
-                    <a href="#">
+                <div className="bag"
+                onClick={()=>dispatch(isVisibleBagToggle())}
+                >
+                    <div >
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="Icon / Shopping bag" clipPath="url(#clip0_5_10)">
                                 <g id="Group">
@@ -87,7 +95,7 @@ const Nav = () => {
                             </defs>
                         </svg>
 
-                    </a>
+                    </div>
                     {quantity>0
                         ? <span className='quantity'>{quantity}</span>
                         : null

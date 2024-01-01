@@ -4,17 +4,19 @@ import {useDispatch, useSelector} from "react-redux";
 import {changeSizeAction} from "../headerSectionReducerSlice";
 import Button from "../../../../ui/button/Button";
 
-const SectionSize = () => {
+const SectionSize = (props) => {
 
     const dispatch=useDispatch()
     const headerSlice=useSelector(state => state.headerSlice)
-
-    const [select,setSelect]=useState(headerSlice.size)
+    const itemsArray=useSelector(state => state.headerSlice.itemsArray)
+    const imgColor = useSelector(state => state.headerSlice.color)
+    //
+    const [select,setSelect]=useState(props.size)
     // console.log(select)
 
 
     function changeSizeHandler(e) {
-        setSelect(e.target.value)
+        // setSelect(e.target.value)
         dispatch(changeSizeAction(e.target.value))
 
     }
@@ -35,16 +37,15 @@ const SectionSize = () => {
             <div className={s.sizeBag}>
                 <div className={s.size}>
                     <span>Size</span>
-                    <select className={s.changeSize}
-                            value={select}
-                            onChange={(e)=>changeSizeHandler(e)}
-                            name="" id=""
-                    >
-                        {headerSlice.sizes.map(item=>(
-                            <option key={item} value={item}>{item}</option>
-                        ))}
+                    <select >
+                        {
+                            select.map(s=>(
+                                <option key={s} value={s}>{s}</option>
+                            ))
+                        }
 
                     </select>
+
                 </div>
 
 

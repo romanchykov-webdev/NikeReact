@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useLayoutEffect, useState} from 'react';
 import s from './SectionImg.module.scss'
 import imgBlack from '../../img/itemsImg/1.png'
 import imgRed from '../../img/itemsImg/2.png'
@@ -8,51 +8,49 @@ import { addToBagAction} from "../../../../reducers/addToBagReducerSlice";
 import ColorChange from "../coloreChange/ColorChange";
 import {dispatchStepsWithTimeout} from "../../../step/stepShowHidden";
 
-const SectionImg = () => {
+
+
+const SectionImg = (props) => {
+
+
+
+
     const dispatch = useDispatch()
 
 
 
 
-    const imgColor = useSelector(state => state.headerSlice.color)
     const headerItem = useSelector(state => state.headerSlice)
-    let imgBig
-    switch (imgColor) {
-        case'black':
-            imgBig = imgBlack
-            break
-        case'red':
-            imgBig = imgRed
-            break
-        case'orange':
-            imgBig = imgOrange
-            break
-        default:
-            break
-    }
+    const bagLength = useSelector(state => state.addToBagSlice.bag)
 
-    function handlerPopup() {
-        const item = {
-            id: '1',
-            size: headerItem.size,
-            color: headerItem.color,
-            price: headerItem.price,
-            title: 'AIR JORDAN 1 RETRO HIGH OG',
-            desc: 'AIR JORDAN 1 RETRO HIGH OG',
-            img: `http://localhost:3000${imgBig}`,
-        }
 
-        // dispatch(popupIsActive())
-        dispatch(addToBagAction({item}))
-        dispatchStepsWithTimeout(dispatch);
-    }
+
+
+    // function handlerPopup() {
+    //     const item = {
+    //         id: bagLength.length,
+    //         article: 1,
+    //         size: headerItem.size,
+    //         color: headerItem.color,
+    //         price: headerItem.price,
+    //         title: 'AIR JORDAN 1 RETRO HIGH OG',
+    //         desc: 'AIR JORDAN 1 RETRO HIGH OG',
+    //         img: `http://localhost:3000${imgBig}`,
+    //         quantity:1,
+    //     }
+    //
+    //     // dispatch(popupIsActive())
+    //     dispatch(addToBagAction({item}))
+    //     dispatchStepsWithTimeout(dispatch);
+    // }
 
     return (
         <div className={s.wrapper}>
         <ColorChange/>
+
+
         <div className={s.wrapperImg}>
-            {/*<img src={imgBlack} alt="AIR JORDAN 1 RETRO HIGH OG"/>*/}
-            <img src={imgBig} alt="AIR JORDAN 1 RETRO HIGH OG"/>
+            <img src={props.img} alt=""/>
             <div className={s.wrapSvg}>
                 <svg width="562" height="39" viewBox="0 0 562 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -68,12 +66,12 @@ const SectionImg = () => {
                 </svg>
             </div>
             <div className={s.add}
-                 onClick={() => handlerPopup()}
+                 // onClick={() => handlerPopup()}
             >
                 <span></span>
                 <span></span>
             </div>
-            {/*    <!-- /.wrapSvg -->*/}
+
         </div>
         </div>
     );

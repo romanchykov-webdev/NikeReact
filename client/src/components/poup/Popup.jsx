@@ -14,6 +14,7 @@ const Popup = () => {
 
     const dispatch = useDispatch()
     const popupIsActive=useSelector(state => state.popupSlice.isActive)
+    const bagLength=useSelector(state => state.addToBagSlice.bag)
 
     const colorAction = useSelector(state => state.popupSlice.color)
     const itemData = useSelector(state => state.popupSlice.item)
@@ -38,13 +39,15 @@ const Popup = () => {
 
     function handlerPopup() {
         const item = {
-            id: itemData.id,
+            id: bagLength.length,
+            article: itemData.article,
             size: popupData.size,
             color: popupData.color,
             price: itemData.price,
             title: itemData.name,
             desc: '',
             img: `http://localhost:3000${itemData.img}`,
+            quantity:1,
         }
 
         // dispatch(popupIsActive())
