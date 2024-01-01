@@ -1,8 +1,5 @@
-import React, {useLayoutEffect, useState} from 'react';
+import React from 'react';
 import s from './SectionImg.module.scss'
-import imgBlack from '../../img/itemsImg/1.png'
-import imgRed from '../../img/itemsImg/2.png'
-import imgOrange from '../../img/itemsImg/3.png'
 import {useDispatch, useSelector} from "react-redux";
 import { addToBagAction} from "../../../../reducers/addToBagReducerSlice";
 import ColorChange from "../coloreChange/ColorChange";
@@ -10,39 +7,31 @@ import {dispatchStepsWithTimeout} from "../../../step/stepShowHidden";
 
 
 
-const SectionImg = (props) => {
-
-
-
-
+const SectionImg = ({item,sizeActive}) => {
     const dispatch = useDispatch()
 
 
 
 
-    const headerItem = useSelector(state => state.headerSlice)
-    const bagLength = useSelector(state => state.addToBagSlice.bag)
 
+    function handlerPopup(item) {
+        const itemNew = {
+            id: item.id,
+            article: item.article,
+            size: sizeActive,
+            color: item.color,
+            price: item.price,
+            title: 'AIR JORDAN 1 RETRO HIGH OG',
+            desc: 'AIR JORDAN 1 RETRO HIGH OG',
+            // img: `http://localhost:3000${imgBig}`,
+            img: item.img,
+            quantity:1,
+        }
 
-
-
-    // function handlerPopup() {
-    //     const item = {
-    //         id: bagLength.length,
-    //         article: 1,
-    //         size: headerItem.size,
-    //         color: headerItem.color,
-    //         price: headerItem.price,
-    //         title: 'AIR JORDAN 1 RETRO HIGH OG',
-    //         desc: 'AIR JORDAN 1 RETRO HIGH OG',
-    //         img: `http://localhost:3000${imgBig}`,
-    //         quantity:1,
-    //     }
-    //
-    //     // dispatch(popupIsActive())
-    //     dispatch(addToBagAction({item}))
-    //     dispatchStepsWithTimeout(dispatch);
-    // }
+        // dispatch(popupIsActive())
+        dispatch(addToBagAction({item:itemNew}))
+        dispatchStepsWithTimeout(dispatch);
+    }
 
     return (
         <div className={s.wrapper}>
@@ -50,7 +39,7 @@ const SectionImg = (props) => {
 
 
         <div className={s.wrapperImg}>
-            <img src={props.img} alt=""/>
+            <img src={item.img} alt=""/>
             <div className={s.wrapSvg}>
                 <svg width="562" height="39" viewBox="0 0 562 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -66,7 +55,7 @@ const SectionImg = (props) => {
                 </svg>
             </div>
             <div className={s.add}
-                 // onClick={() => handlerPopup()}
+                 onClick={() => handlerPopup(item)}
             >
                 <span></span>
                 <span></span>

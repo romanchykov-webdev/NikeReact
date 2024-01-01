@@ -42,6 +42,9 @@
             background-color: #000;
             border: none;
           }
+          &:focus-visible{
+            outline: none;
+          }
         }
       }
       .bagItem{

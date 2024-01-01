@@ -7,17 +7,18 @@ import {useSelector} from "react-redux";
 const HeaderSection = () => {
     const itemArray=useSelector(state => state.headerSlice.itemsArray)
     const colorActive=useSelector(state => state.headerSlice.color)
+    const sizeActive=useSelector(state => state.headerSlice.size)
 
     return (
         <section className={s.wrapperHeaderSection}>
             {
-                itemArray.map(item=>{
+                itemArray.map((item,index)=>{
                     if(item.color===colorActive){
                         return(
-                            <>
-                                <SectionImg img={item.img}/>
-                                <SectionSize size={item.size} />
-                            </>
+                            <div     key={index+3}>
+                                <SectionImg item={item} sizeActive={sizeActive}  />
+                                <SectionSize size={item.size} price={item.price}/>
+                            </div>
                         )
                     }
                 })

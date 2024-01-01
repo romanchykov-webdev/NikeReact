@@ -9,6 +9,7 @@ const headerSectionReducerSlice = createSlice({
     name: 'headerSlice',
     initialState: {
         color: 'black',
+        size:'',
         itemsArray:[
             {id: 1,article: 1,size: [41,42,43,44,45],color: 'red',price: 275,title: 'AIR JORDAN 1 RETRO HIGH OG',desc: 'AIR JORDAN 1 RETRO HIGH OG',img: imgRed,quantity:1,},
             {id: 2,article: 2,size: [43,44,45],color: 'black',price: 275,title: 'AIR JORDAN 1 RETRO HIGH OG',desc: 'AIR JORDAN 1 RETRO HIGH OG',img: imgBlack,quantity:1,},
