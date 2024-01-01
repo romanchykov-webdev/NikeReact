@@ -41,6 +41,7 @@ const addToBagReducerSlice = createSlice({
         },
         isVisibleBagToggle(state) {
             state.isVisibleBag = !state.isVisibleBag
+
         },
         showStepAction(state) {
             state.isVisibleStep = true;
@@ -88,8 +89,12 @@ const addToBagReducerSlice = createSlice({
         },
         removeItemInTheBag(state, action) {
             const id = action.payload
-            debugger
+            // debugger
+
             state.bag = state.bag.filter(item => item.id !== id);
+            if(state.bag.length===0){
+                state.isVisibleBag=false
+            }
 
         }
     }

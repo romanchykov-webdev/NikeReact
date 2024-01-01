@@ -17,6 +17,7 @@
     height: 80%;
     padding: 10px 20px;
     overflow-y: scroll;
+    border-radius: 12px;
     .wrapperClose{
       display: flex;
       justify-content: flex-end;
@@ -67,10 +68,17 @@
       grid-template-columns: repeat(10, 1fr);
       column-gap: 5px;
       color:black;
-      padding: 20px;
+      padding:10px 20px;
       box-shadow: 1px 1px 5px black;
       margin-bottom: 10px;
-
+      border-radius: 12px;
+        div{
+          display: flex;
+          align-items: center;
+        }
+      .titleItem,.price{
+        text-shadow: 1px 1px 1px black;
+      }
       .imgItem{
         width: 40px;
         height: 40px;
@@ -82,7 +90,8 @@
           }
       }
       .titleItem{
-        font-size: 1em;
+        font-size: 1.6em;
+        line-height: 30px;
         grid-column: 2/6;
       }
       .itemColor{
@@ -90,6 +99,7 @@
         flex-direction: column;
         grid-column-start: 6;
         .blockColor{
+          border-radius: 50%;
           width: 20px;
           height: 20px;
 
@@ -100,13 +110,37 @@
         gap: 10px;
         grid-column: 7/9;
         .more,.meno{
-          width: 20px;
-          height: 20px;
+          width: 40px;
+          height: 100%;
           cursor: pointer;
           border: 1px solid black;
           display: flex;
           align-items: center;
           justify-content: center;
+          font-size: 2em;
+          position: relative;
+          overflow: hidden;
+            span{
+              position: absolute;
+              top: calc(50% - 1px);
+              left: 0;
+              //width: 90% ;
+              height: 2px;
+              display: inline-block;
+              background-color: black;
+
+            }
+        }
+        .more{
+          background-color: rgba(104, 191, 76, 0.48);
+          span{
+            &:last-child{
+              transform: rotate(90deg);
+            }
+          }
+        }
+        .meno{
+          background-color: rgba(213, 33, 46, 0.48);
 
         }
       }
@@ -120,8 +154,8 @@
         align-items: center;
         cursor:pointer;
         span {
-          width: 20px;
-          height: 20px;
+          width: 40px;
+          height: 40px;
           border: 1px solid black;
           border-radius: 50%;
           position: relative;
@@ -146,6 +180,20 @@
             background-color: red;
           }
         }
+      }
+    }
+    .total{
+      //outline: 1px solid red;
+      margin-top: 20px;
+      color:black;
+      font-size: 2em;
+      padding: 15px;
+      display: flex;
+      justify-content: flex-end;
+      span{
+        //font-size: 2.1em;
+        font-weight: 900  ;
+        margin-left: 10px;
       }
     }
   }

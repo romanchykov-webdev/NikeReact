@@ -1,0 +1,112 @@
+@media screen and (max-width: 1400px) {
+
+}
+
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 992px) {
+
+}
+
+@media screen and (max-width: 768px) {
+  .wrapperBag{
+    .bag{
+      width: 95%;
+      height: 95%;
+      .wrapperItem {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr 1fr;
+        row-gap: 20px;
+        .imgItem{
+          grid-column: 1/3;
+          width: 100%;
+          height: 100%;
+
+        }
+        .titleItem{
+          justify-content: center;
+          grid-column: 3/6;
+        }
+        .itemColor{
+          justify-content: center;
+        }
+        .quantity,.price,.removeItem{
+          grid-row-start: 2;
+        }
+        .quantity{
+          grid-column: 1/5;
+          justify-content: center;
+          .more,.meno{
+            width: 50%;
+            span{
+              width: 50%;
+              left:25%;
+            }
+          }
+          .out{
+            font-size: 2em;
+          }
+        }
+        .price{
+          grid-column-start: 5;
+          justify-content: center;
+          font-size: 2em;
+          font-weight: 600;
+        }
+        .removeItem{
+          grid-column-start: 6;
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .wrapperBag {
+    .bag {
+      .wrapperItem {
+        grid-template-rows: repeat(4,1fr);
+        .imgItem{
+          grid-row: 1;
+          grid-column:1/7  ;
+        }
+        .titleItem,.itemColor{
+          grid-row: 2;
+        }
+        .titleItem{
+          grid-column: 1/6;
+        }
+        .itemColor{
+          grid-column-start: 6;
+        }
+        .quantity,.price{
+          grid-row: 3;
+        }
+        .quantity{
+          grid-column: 1/5;
+        }
+        .price{
+          grid-column: 5/7;
+        }
+        .removeItem{
+          grid-row: 4;
+          grid-column: 1/7;
+          span{
+            width: 50%;
+            height: 50%;
+            border-radius: 12px;
+            span{
+              width: 50%;
+              left: calc(50% - 25%)
+            }
+
+          }
+        }
+      }
+
+    }
+  }
+}
