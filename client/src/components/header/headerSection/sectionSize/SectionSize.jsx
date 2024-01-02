@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './sectionSize.module.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {changeSizeAction} from "../headerSectionReducerSlice";
 import Button from "../../../../ui/button/Button";
 
-const SectionSize = ({price, size}) => {
+const SectionSize = ({price,size}) => {
 
     const dispatch=useDispatch()
 
@@ -14,7 +14,10 @@ const SectionSize = ({price, size}) => {
 
     const[selectValue,setSelectValue]=useState(size[0])
     // console.log("selectValue"+selectValue)
-    dispatch(changeSizeAction(selectValue))
+    // dispatch(changeSizeAction(selectValue))
+    useEffect(() => {
+        dispatch(changeSizeAction(selectValue))
+    }, []);
 
     function handlerSelect(e) {
         setSelectValue(e.target.value)

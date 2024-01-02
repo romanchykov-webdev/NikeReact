@@ -18,6 +18,8 @@ const HeaderSection = () => {
                             <div  className={s.wrapperHeaderSection}   key={index+3}>
                                 <SectionImg item={item} sizeActive={sizeActive}  />
                                 <SectionSize size={item.size} price={item.price}/>
+
+
                             </div>
                         )
                     }

@@ -14,9 +14,9 @@ const Bag = () => {
     const dispatch = useDispatch()
 
     const bag = useSelector(state => state.addToBagSlice.bag)
-const totalPrice=bag.reduce((acumm,item)=>{
-    return acumm+ item.quantity*item.price
-},0)
+    const totalPrice = bag.reduce((acumm, item) => {
+        return acumm + item.quantity * item.price
+    }, 0)
 
 
     return (
@@ -38,8 +38,14 @@ const totalPrice=bag.reduce((acumm,item)=>{
                             <div className={s.imgItem}>
                                 <img src={item.img} alt=""/>
                             </div>
+
                             <div className={s.titleItem} style={{color: item.color}}>
                                 {item.title}
+
+                                <div className={s.size}>
+                                    <span className={s.text}>Size: </span>
+                                    <span>{item.size}</span>
+                                </div>
                             </div>
                             <div className={s.itemColor}>
                                 <div className={s.blockColor}
@@ -59,15 +65,17 @@ const totalPrice=bag.reduce((acumm,item)=>{
                                 <div className={s.out}>{item.quantity}</div>
 
                                 <div className={s.meno}
-                                     onClick={() => dispatch(decrementBagAction({id:item.id}))}
-                                > <span></span>
+                                     onClick={() => dispatch(decrementBagAction({id: item.id}))}
+                                ><span></span>
                                 </div>
+
                             </div>
                             <div className={s.price} style={{color: item.color}}>
-                               $  {item.price * item.quantity}
+
+                                $ {item.price * item.quantity}
                             </div>
                             <div className={s.removeItem}
-                                 onClick={()=>dispatch(removeItemInTheBag(item.id))}
+                                 onClick={() => dispatch(removeItemInTheBag(item.id))}
                             >
                                 <span>
                                     <span></span>
