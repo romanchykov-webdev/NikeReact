@@ -1,5 +1,6 @@
 import React from 'react';
-import  './Popup.scss'
+import './Popup.scss'
+
 import {useDispatch, useSelector} from "react-redux";
 import {
     popupChangeColorActive,
@@ -13,7 +14,7 @@ import {dispatchStepsWithTimeout} from "../step/stepShowHidden";
 const Popup = () => {
 
     const dispatch = useDispatch()
-    const popupIsActive=useSelector(state => state.popupSlice.isActive)
+    const popupIsActive = useSelector(state => state.popupSlice.isActive)
 
 
     const colorAction = useSelector(state => state.popupSlice.color)
@@ -48,7 +49,7 @@ const Popup = () => {
             desc: itemData.name,
             // img: `http://localhost:3000${itemData.img}`,
             img: itemData.img,
-            quantity:1,
+            quantity: 1,
         }
 
         // dispatch(popupIsActive())
@@ -56,25 +57,39 @@ const Popup = () => {
         dispatchStepsWithTimeout(dispatch);
     }
 
+
+    function hendler() {
+        console.log('ok')
+    }
+
     return (
         <div className={`popup ${popupIsActive ? 'active' : ''}`}
+
              style={{backgroundColor: `${colorBg}`}}
 
         >
 
             <div className={"wrapper"}>
-                <div className={"closePopup"}
-                     onClick={() => dispatch(popupHiddenAction())}
-                >X
-                </div>
-                <div className={"imgBx"} style={{backgroundColor:colorBg}} >
+                <div className="wrapperCloset" >
+                    <div className={"closePopup"}
+                         onClick={() => dispatch(popupHiddenAction())}
 
-                    {/*<img src="https://github.com/anuzbvbmaniac/Responsive-Product-Card---CSS-ONLY/blob/master/assets/img/jordan_proto.png?raw=true" alt="Nike Jordan Proto-Lyte Image"/>*/}
-                    <img src={itemData.img} alt="Nike Jordan Proto-Lyte Image"/>
+                    >
+                        <span></span>
+                        <span></span>
+                    </div
+                    >
                 </div>
-                <div className={"details"}>
-                    <div className={"content"}>
-                        <h2 ><span className={"nameItemPopup"} style={{color:`${colorAction}`}} >{itemData.name}</span><br/>
+                <div className="wrapperLRblock">
+                    <div className={"imgBx"}
+                         style={{backgroundColor: colorBg}}
+                    >
+
+                        <img src={itemData.img} alt={`${itemData.title} img`}/>
+                    </div>
+                    <div className={"details"}>
+                        <h2><span className={"nameItemPopup"}
+                                  style={{color: `${colorAction}`}}>{itemData.name}</span><br/>
                             <span>Running Collection</span>
                         </h2>
                         <p className={"textDescription"}>
@@ -105,10 +120,10 @@ const Popup = () => {
                         </p>
                         <div className={"changeSizePopup"}>
                             {
-                                itemData.sizes.map(s=>(
+                                itemData.sizes.map(s => (
                                     <span key={s}
-                                        className={`spanWrapper ${popupData.size === s ? 'active': ''}`}
-                                    onClick={()=>dispatch(popupChangeSizeAction(s))}
+                                          className={`spanWrapper ${popupData.size === s ? 'active' : ''}`}
+                                          onClick={() => dispatch(popupChangeSizeAction(s))}
                                     >
                                         <span>{s}</span>
                                     </span>
@@ -124,13 +139,12 @@ const Popup = () => {
                             </h3>
                             <button className={`addToBag ${popupData.size !=='' ? 'active' : ''}`}
                                     disabled={popupData.size===''}
-                                onClick={()=>handlerPopup()}
+                                    onClick={()=>handlerPopup()}
                             >Buy Now</button>
                         </div>
-                        {/*<!-- /.wrapper -->*/}
-
                     </div>
                 </div>
+
             </div>
             {/*<!-- /.wrapper -->*/}
 
