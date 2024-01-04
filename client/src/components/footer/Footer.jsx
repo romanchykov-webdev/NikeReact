@@ -181,6 +181,7 @@ const Footer = () => {
                         <a href="mailto:romanchykov.serhii@gmail.com">
                             romanchykov.serhii@gmail.com
                         </a>
+                        <a href="https://github.com/romanchykov-webdev/NikeReact.git" target="_blank">Link Github</a>
                     </div>
                     
                     <div className={s.social}>
