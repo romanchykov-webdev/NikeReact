@@ -55,7 +55,8 @@ const Bag = () => {
                             </div>
                             <div className={s.quantity}>
                                 <div className={s.more}
-                                     onClick={() => dispatch(incrementBagAction({id: item.id}))}
+                                     // onClick={() => dispatch(incrementBagAction({id: item.id}))}
+                                     onClick={() => dispatch(incrementBagAction({article: item.article}))}
                                 >
                                     <span></span>
                                     <span></span>
@@ -65,7 +66,8 @@ const Bag = () => {
                                 <div className={s.out}>{item.quantity}</div>
 
                                 <div className={s.meno}
-                                     onClick={() => dispatch(decrementBagAction({id: item.id}))}
+                                     // onClick={() => dispatch(decrementBagAction({id: item.id}))}
+                                     onClick={() => dispatch(decrementBagAction({article: item.article}))}
                                 ><span></span>
                                 </div>
 
@@ -75,7 +77,8 @@ const Bag = () => {
                                 $ {item.price * item.quantity}
                             </div>
                             <div className={s.removeItem}
-                                 onClick={() => dispatch(removeItemInTheBag(item.id))}
+                                 // onClick={() => dispatch(removeItemInTheBag(item.id))}
+                                 onClick={() => dispatch(removeItemInTheBag({article: item.article}))}
                             >
                                 <span>
                                     <span></span>

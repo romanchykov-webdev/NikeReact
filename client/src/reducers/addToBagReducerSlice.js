@@ -50,7 +50,8 @@ const addToBagReducerSlice = createSlice({
             state.isVisibleStep = false;
         },
         incrementBagAction(state, action) {
-            const {id} = action.payload;
+            // const {id} = action.payload;
+            const {article} = action.payload;
             // debugger
             // return {
             //     ...state,
@@ -59,15 +60,22 @@ const addToBagReducerSlice = createSlice({
             //         : {...item}
             //     )]
             // }
+            // state.bag = state.bag.map(item =>
+            //     item.id === id
+            //         ? {...item, quantity: item.quantity + 1}
+            //         : item
+            // );
             state.bag = state.bag.map(item =>
-                item.id === id
+                item.article === article
                     ? {...item, quantity: item.quantity + 1}
                     : item
             );
         },
         decrementBagAction(state, action) {
             // debugger
-            const {id} = action.payload
+            // const {id} = action.payload
+            // debugger
+            const {article} = action.payload
             // state.bag = state.bag.map(item =>
             //     item.id === id
             //         ? {
@@ -77,24 +85,41 @@ const addToBagReducerSlice = createSlice({
             //         }
             //         : item
             // );
-            state.bag = state.bag.map(item =>{
-                if(item.id===id){
-                    if(item.quantity>1){
-                        return {...item, quantity: item.quantity - 1}
+
+            // state.bag = state.bag.map(item => {
+            //     if (item.id === id) {
+            //         if (item.quantity > 1) {
+            //             return {...item, quantity: item.quantity - 1}
+            //         }
+            //     }
+            //     return item
+            // })
+
+            state.bag = state.bag.map(item =>
+                item.article === article
+                    ? {
+                        ...item, quantity: item.quantity > 1
+                            ? item.quantity - 1
+                            : item.quantity = 1
                     }
-                }
-                return item
-            })
+                    : item
+            );
 
         },
         removeItemInTheBag(state, action) {
-            const id = action.payload
+            // const id = action.payload
+            // debugger
+            const {article} = action.payload
             // debugger
 
-            state.bag = state.bag.filter(item => item.id !== id);
-            if(state.bag.length===0){
-                state.isVisibleBag=false
+            // state.bag = state.bag.filter(item => item.id !== id);
+
+            state.bag = state.bag.filter(item => item.article !== article)
+
+            if (state.bag.length === 0) {
+                state.isVisibleBag = false
             }
+
 
         }
     }

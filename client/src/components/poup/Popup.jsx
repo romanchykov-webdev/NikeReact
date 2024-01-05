@@ -10,6 +10,7 @@ import {
 
 import {addToBagAction} from "../../reducers/addToBagReducerSlice";
 import {dispatchStepsWithTimeout} from "../step/stepShowHidden";
+import {v4} from "uuid";
 
 const Popup = () => {
 
@@ -41,7 +42,7 @@ const Popup = () => {
     function handlerPopup() {
         const item = {
             id: itemData.id,
-            article: itemData.article,
+            article: v4(),
             size: popupData.size,
             color: popupData.color,
             price: itemData.price,

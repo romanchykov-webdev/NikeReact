@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import { addToBagAction} from "../../../../reducers/addToBagReducerSlice";
 import ColorChange from "../coloreChange/ColorChange";
 import {dispatchStepsWithTimeout} from "../../../step/stepShowHidden";
+import {v4} from "uuid";
 
 
 
@@ -17,7 +18,7 @@ const SectionImg = ({item,sizeActive}) => {
     function handlerPopup(item) {
         const itemNew = {
             id: item.id,
-            article: item.article,
+            article: v4() ,
             size: sizeActive,
             color: item.color,
             price: item.price,
