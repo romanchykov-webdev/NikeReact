@@ -72,8 +72,12 @@ footer {
     .romanchykov{
       display: flex;
       font-size: 1.8em;
+      justify-content: space-between;
       //margin-top:20px ;
       //margin-bottom:20px ;
+      a:last-child{
+        margin-left: 20px;
+      }
     }
     .social {
       a {
